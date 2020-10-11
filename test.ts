@@ -1,17 +1,17 @@
 import { fail } from "https://deno.land/std/testing/asserts.ts";
 import * from "https://deno.land/x/sleep/mod.ts";
 
-Deno.test("doze for 5 seconds", async (): Promise<void> => {
+Deno.test("doze for 3 seconds", async (): Promise<void> => {
 
     const startTS = Date.now();
-    await doze(2);
+    await doze(3);
     const dur = Date.now() - startTS;
-    if (dur < 2000 || dur > 2100){
+    if (dur < 3000 || dur > 3100){
         fail('could not sleep for the right duration');
     }
 });
 
-Deno.test("doze for 500 miliseconds", async (): Promise<void> => {
+Deno.test("doze for 500 milliseconds", async (): Promise<void> => {
 
     const startTS = Date.now();
     await dozeMS(500);

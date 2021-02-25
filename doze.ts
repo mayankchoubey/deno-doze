@@ -5,7 +5,7 @@
  * @example
  * await doze(1);
  */
-export function doze(seconds: number) {
+export function doze(seconds: number): Promise<void> {
     return dozeInternal(seconds*1000);
 }
 
@@ -16,7 +16,7 @@ export function doze(seconds: number) {
  * @example
  * await dozeMS(100);
  */
-export function dozeMS(mseconds: number) {
+export function dozeMS(mseconds: number): Promise<void> {
     return dozeInternal(mseconds);
 }
 
@@ -28,6 +28,6 @@ export function dozeMS(mseconds: number) {
  * @example
  * await dozeInternal(100);
  */
-function dozeInternal(msecs: number) {
+function dozeInternal(msecs: number): Promise<void> {
     return new Promise(resolve => setTimeout(resolve, msecs));
 }
